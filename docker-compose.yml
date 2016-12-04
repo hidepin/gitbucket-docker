@@ -1,0 +1,21 @@
+version: '2'
+
+services:
+  app:
+    build:
+      context: gitbucket
+      args:
+        no_proxy: 127.0.0.1
+        http_proxy:
+        https_proxy:
+    volumes:
+      - /opt/docker/gitbucket/volumes/gitbucket/opt/gitbucket:/opt/gitbucket
+      - /etc/localtime:/etc/localtime:ro
+    ports:
+      - "8080:8080"
+    networks:
+      - gitbucket_net
+
+networks:
+  gitbucket_net:
+    driver: bridge
