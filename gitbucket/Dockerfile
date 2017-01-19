@@ -3,7 +3,7 @@ FROM tomcat:8.5-jre8-alpine
 MAINTAINER Hidetoshi Imai <hidepin@gmail.com>
 
 RUN rm -rf $CATALINA_HOME/webapps/*
-ADD https://github.com/gitbucket/gitbucket/releases/download/4.7.1/gitbucket.war $CATALINA_HOME/webapps/gitbucket.war
+ADD https://github.com/gitbucket/gitbucket/releases/download/4.8/gitbucket.war $CATALINA_HOME/webapps/gitbucket.war
 RUN ln -s /opt/gitbucket /root/.gitbucket
 
 VOLUME /opt/gitbucket
