@@ -1,0 +1,16 @@
+- hosts: all
+
+  vars:
+    service: gitbucket.service
+
+  tasks:
+    - name: set gitbucket systemd service
+      template: src="{{ service }}.j2" dest="/etc/systemd/system/{{ service }}"
+      notify: gitbucket restart
+
+    - name: enable gitbucket systemd service
+      service: name="{{ service }}" enabled=yes state=started daemon_reload=yes
+
+  handlers:
+    - name: gitbucket restart
+      service: name=gitbucket state=restarted
