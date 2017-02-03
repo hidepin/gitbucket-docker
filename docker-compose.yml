@@ -8,4 +8,4 @@ services:
       - /opt/docker/gitbucket/volumes/gitbucket/opt/gitbucket:/opt/gitbucket
       - /etc/localtime:/etc/localtime:ro
     ports:
-      - "8080:8080"
+      - "8000:8080"
