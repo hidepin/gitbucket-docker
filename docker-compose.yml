@@ -2,8 +2,7 @@ version: '2'
 
 services:
   app:
-    build:
-      context: gitbucket
+    build: gitbucket
     volumes:
       - /opt/docker/gitbucket/volumes/gitbucket/opt/gitbucket:/opt/gitbucket
       - /etc/localtime:/etc/localtime:ro
