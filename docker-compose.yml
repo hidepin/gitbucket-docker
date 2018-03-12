@@ -5,6 +5,7 @@ services:
     build: gitbucket
     volumes:
       - /opt/docker/gitbucket/volumes/gitbucket/opt/gitbucket:/opt/gitbucket
+      - /opt/docker/gitbucket/volumes_ext/gitbucket/root/m2:/root/.m2
       - /etc/localtime:/etc/localtime:ro
     ports:
       - "8080:8080"
